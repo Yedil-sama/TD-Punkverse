@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using TD_Punkverse.Core;
 using UnityEngine;
 
-namespace Core
+namespace TD_Punkverse.Core
 {
-	public sealed class ServiceAllocator : MonoBehaviour
+	public sealed class ServiceLocator : MonoBehaviour
 	{
-		public static ServiceAllocator Instance { get; private set; }
+		public static ServiceLocator Instance { get; private set; }
 
 		private readonly Dictionary<Type, IService> _services = new();
 
@@ -22,9 +21,9 @@ namespace Core
 			Instance = this;
 		}
 
-		public void Register<T>(T service) where T : IService
+		public void Register(IService service)
 		{
-			Type type = typeof(T);
+			Type type = service.GetType();
 
 			if (_services.ContainsKey(type))
 			{

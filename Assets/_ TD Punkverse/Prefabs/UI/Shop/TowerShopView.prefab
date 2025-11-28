@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 818128165209144464}
   - component: {fileID: 443693395808634927}
   m_Layer: 0
-  m_Name: TowerPreview
+  m_Name: TowerShopView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -265,6 +265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _icon: {fileID: 446165313280093136}
   _cost: {fileID: 7209703816174497701}
+  _towerPrefab: {fileID: 0}
 --- !u!114 &818128165209144464
 MonoBehaviour:
   m_ObjectHideFlags: 0
