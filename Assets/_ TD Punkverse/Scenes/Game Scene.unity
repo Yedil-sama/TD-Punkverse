@@ -2149,7 +2149,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4759715616757439353, guid: 85472999df7572946accb762a2b70fd9, type: 3}
       propertyPath: _x
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4908162587596748914, guid: 85472999df7572946accb762a2b70fd9, type: 3}
       propertyPath: m_Name
@@ -2478,7 +2478,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2794612737878537131, guid: ce9f8ee94638a7a4aaa2b60d724f0289, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2794612737878537131, guid: ce9f8ee94638a7a4aaa2b60d724f0289, type: 3}
       propertyPath: m_AnchorMin.x
@@ -2486,15 +2486,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2794612737878537131, guid: ce9f8ee94638a7a4aaa2b60d724f0289, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2794612737878537131, guid: ce9f8ee94638a7a4aaa2b60d724f0289, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 125
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2794612737878537131, guid: ce9f8ee94638a7a4aaa2b60d724f0289, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 150
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2794612737878537131, guid: ce9f8ee94638a7a4aaa2b60d724f0289, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2526,11 +2526,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2794612737878537131, guid: ce9f8ee94638a7a4aaa2b60d724f0289, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 140
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2794612737878537131, guid: ce9f8ee94638a7a4aaa2b60d724f0289, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -125
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2794612737878537131, guid: ce9f8ee94638a7a4aaa2b60d724f0289, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2547,7 +2547,7 @@ PrefabInstance:
     - target: {fileID: 6472417975518260091, guid: ce9f8ee94638a7a4aaa2b60d724f0289, type: 3}
       propertyPath: _towerPrefab
       value: 
-      objectReference: {fileID: -7380946345174814332, guid: 25645c1da2fe61145ac0838589df4b38, type: 3}
+      objectReference: {fileID: -8424392956901787754, guid: d88b0ba776458fd4190ef86715bb41e2, type: 3}
     - target: {fileID: 9115228417602466868, guid: ce9f8ee94638a7a4aaa2b60d724f0289, type: 3}
       propertyPath: m_Name
       value: TowerShopView
