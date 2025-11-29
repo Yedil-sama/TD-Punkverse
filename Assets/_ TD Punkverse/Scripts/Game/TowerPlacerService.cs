@@ -118,6 +118,11 @@ namespace TD_Punkverse.Game
 			{
 				shootingTower.SetPlacementPreview(active);
 			}
+
+			if (ghost is YurtTowerView yurtTower)
+			{
+				yurtTower.SetPlacementPreview(active);
+			}
 		}
 	}
 }

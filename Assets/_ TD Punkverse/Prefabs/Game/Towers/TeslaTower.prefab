@@ -1080,6 +1080,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &4675197553155232843
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3967166033683505367}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3967166033683505367
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4675197553155232843}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1280278104709568059}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4754692868537251246
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,7 +1228,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4875499550372970958}
-  - component: {fileID: -8424392956901787754}
+  - component: {fileID: 7417710370420166282}
+  - component: {fileID: 8508814649482288534}
   m_Layer: 0
   m_Name: TeslaTower
   m_TagString: Untagged
@@ -1238,9 +1270,10 @@ Transform:
   - {fileID: 366022614112300348}
   - {fileID: 6882281034021718281}
   - {fileID: 7068730220418504282}
+  - {fileID: 9117812685736814175}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-8424392956901787754
+--- !u!114 &7417710370420166282
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1249,9 +1282,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 5074086726599120166}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f11c8866861e811459b7c89eadf14b2a, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d836d1135a5c5a4ea0271e0fb0792df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _tower:
+    Name: Tesla Tower
+    Cost: 500
+    WorkSpeed: 1
+    _projectilePrefab: {fileID: 5293488502260491107, guid: 64758a38913e6a6498257aef6bb6eecf, type: 3}
+    _projectileSpeed: 12.5
+    _damage: 2
+    _attackRange: 25
+    _turnSpeed: 180
+  _firePoint: {fileID: 3967166033683505367}
+  _rangeTrigger: {fileID: 8508814649482288534}
+  _rangeIndicator: {fileID: 4429176639317045812}
+--- !u!135 &8508814649482288534
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5074086726599120166}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5176379157512106341
 GameObject:
   m_ObjectHideFlags: 0
@@ -1609,7 +1675,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.53, z: 0}
   m_LocalScale: {x: 0.6000001, y: 0.6000001, z: 0.6000001}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 3967166033683505367}
   m_Father: {fileID: 2108567294768255823}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2937153294719585487
@@ -2258,3 +2325,70 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &6045188742363052665
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4875499550372970958}
+    m_Modifications:
+    - target: {fileID: 3273036614654876710, guid: 0cada564b47381745a93eea3732b8b3c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3273036614654876710, guid: 0cada564b47381745a93eea3732b8b3c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3273036614654876710, guid: 0cada564b47381745a93eea3732b8b3c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3273036614654876710, guid: 0cada564b47381745a93eea3732b8b3c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3273036614654876710, guid: 0cada564b47381745a93eea3732b8b3c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3273036614654876710, guid: 0cada564b47381745a93eea3732b8b3c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3273036614654876710, guid: 0cada564b47381745a93eea3732b8b3c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3273036614654876710, guid: 0cada564b47381745a93eea3732b8b3c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3273036614654876710, guid: 0cada564b47381745a93eea3732b8b3c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3273036614654876710, guid: 0cada564b47381745a93eea3732b8b3c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7967795239766067277, guid: 0cada564b47381745a93eea3732b8b3c, type: 3}
+      propertyPath: m_Name
+      value: AttackRange
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0cada564b47381745a93eea3732b8b3c, type: 3}
+--- !u!1 &4429176639317045812 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7967795239766067277, guid: 0cada564b47381745a93eea3732b8b3c, type: 3}
+  m_PrefabInstance: {fileID: 6045188742363052665}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &9117812685736814175 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3273036614654876710, guid: 0cada564b47381745a93eea3732b8b3c, type: 3}
+  m_PrefabInstance: {fileID: 6045188742363052665}
+  m_PrefabAsset: {fileID: 0}

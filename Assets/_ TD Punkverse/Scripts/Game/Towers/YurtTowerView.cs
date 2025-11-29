@@ -1,27 +1,72 @@
-﻿using System.Collections;
-using TD_Punkverse.Core;
+﻿using TD_Punkverse.Core;
 using UnityEngine;
 
 namespace TD_Punkverse.Game.Towers
 {
 	public sealed class YurtTowerView : TowerView
 	{
-		[SerializeField] private YurtTower _yurt;
+		[SerializeField] private YurtTower _tower;
+		[SerializeField] private GameObject _rangeIndicator;
+		[SerializeField] private SphereCollider _rangeTrigger;
+
 		private PlayerService _player;
+
+		private void Awake()
+		{
+			_rangeTrigger.radius = _tower.Range;
+			UpdateRangeIndicatorScale();
+		}
 
 		private void Start()
 		{
 			_player = ServiceLocator.Instance.Get<PlayerService>();
-			StartCoroutine(IncomeRoutine());
 		}
 
-		private IEnumerator IncomeRoutine()
+		public void SetPlacementPreview(bool active)
 		{
-			while (true)
-			{
-				yield return new WaitForSeconds(_yurt.IncomeInterval);
-				_player.AddMoney(_yurt.IncomePerTick);
-			}
+			if (_rangeIndicator != null)
+				_rangeIndicator.SetActive(active);
+
+			UpdateRangeIndicatorScale();
+		}
+
+		private void UpdateRangeIndicatorScale()
+		{
+			if (_rangeIndicator == null)
+				return;
+
+			float diameter = _tower.Range * 2f;
+			Vector3 scale = _rangeIndicator.transform.localScale;
+			_rangeIndicator.transform.localScale = new Vector3(diameter, diameter, scale.z);
+		}
+
+		private void OnTriggerEnter(Collider other)
+		{
+			if (!IsPlaced)
+				return;
+
+			ShootingTowerView shootingTower = other.GetComponent<ShootingTowerView>();
+			if (shootingTower == null)
+				return;
+
+			shootingTower.ApplyWorkSpeedBuff(_tower.WorkSpeedBuff);
+		}
+
+		private void OnTriggerExit(Collider other)
+		{
+			if (!IsPlaced)
+				return;
+
+			ShootingTowerView shootingTower = other.GetComponent<ShootingTowerView>();
+			if (shootingTower == null)
+				return;
+
+			shootingTower.RemoveWorkSpeedBuff(_tower.WorkSpeedBuff);
+		}
+
+		public new void FinalizePlacement()
+		{
+			base.FinalizePlacement();
 		}
 	}
 }
