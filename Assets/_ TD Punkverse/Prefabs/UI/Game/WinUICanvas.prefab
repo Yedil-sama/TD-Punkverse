@@ -88,6 +88,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4664738740413524376, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
+      propertyPath: m_Name
+      value: Buttons
+      objectReference: {fileID: 0}
     - target: {fileID: 8189554270043976731, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
       propertyPath: m_Name
       value: WinPanell
