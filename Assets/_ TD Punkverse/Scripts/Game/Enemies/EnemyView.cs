@@ -13,7 +13,7 @@ namespace TD_Punkverse.Game.Enemies
 		private Transform _target;
 
 		public Enemy Enemy => _enemy;
-		public Vector3 Position => transform.position;
+		public Vector3 Position => gameObject != null && gameObject.activeInHierarchy ? transform.position : Vector3.zero;
 
 		public void Initialize(Enemy enemy, Transform target)
 		{

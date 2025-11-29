@@ -1787,7 +1787,7 @@ PrefabInstance:
     - target: {fileID: 6472417975518260091, guid: ce9f8ee94638a7a4aaa2b60d724f0289, type: 3}
       propertyPath: _towerPrefab
       value: 
-      objectReference: {fileID: -8424392956901787754, guid: 965b9c3979b6b954ba70a7bcbd467afe, type: 3}
+      objectReference: {fileID: 3678225270616336129, guid: 965b9c3979b6b954ba70a7bcbd467afe, type: 3}
     - target: {fileID: 9115228417602466868, guid: ce9f8ee94638a7a4aaa2b60d724f0289, type: 3}
       propertyPath: m_Name
       value: TowerShopView (2)
@@ -2164,7 +2164,7 @@ PrefabInstance:
     - target: {fileID: 6472417975518260091, guid: ce9f8ee94638a7a4aaa2b60d724f0289, type: 3}
       propertyPath: _towerPrefab
       value: 
-      objectReference: {fileID: -8424392956901787754, guid: ec1ffa61704a1024abb10294830b2690, type: 3}
+      objectReference: {fileID: 7633073019727999890, guid: ec1ffa61704a1024abb10294830b2690, type: 3}
     - target: {fileID: 9115228417602466868, guid: ce9f8ee94638a7a4aaa2b60d724f0289, type: 3}
       propertyPath: m_Name
       value: TowerShopView (1)

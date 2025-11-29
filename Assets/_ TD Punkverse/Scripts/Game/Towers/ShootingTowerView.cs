@@ -78,16 +78,23 @@ namespace TD_Punkverse.Game.Towers
 		{
 			while (_enemies.Count > 0)
 			{
-				_enemies.RemoveAll(e => e == null || e.Enemy.CurrentHealth <= 0);
+				_enemies.RemoveAll(e => e == null || e.Enemy == null || e.Enemy.CurrentHealth <= 0);
 
 				if (_enemies.Count == 0)
 					break;
 
 				EnemyView target = _enemies[0];
 
+				if (target == null || target.gameObject == null || _firePoint == null)
+				{
+					_enemies.RemoveAt(0);
+					continue;
+				}
+
 				yield return RotateAndWait(target);
 
-				FireProjectile(target);
+				if (target != null && target.gameObject != null)
+					FireProjectile(target);
 
 				yield return new WaitForSeconds(_tower.WorkSpeed);
 			}
@@ -97,11 +104,14 @@ namespace TD_Punkverse.Game.Towers
 
 		private IEnumerator RotateAndWait(EnemyView target)
 		{
-			if (target == null)
+			if (_firePoint == null || target == null || target.gameObject == null)
 				yield break;
 
 			while (true)
 			{
+				if (_firePoint == null || target == null || target.gameObject == null)
+					yield break;
+
 				Vector3 direction = target.Position - _firePoint.position;
 				direction.y = 0f;
 
@@ -109,7 +119,9 @@ namespace TD_Punkverse.Game.Towers
 					yield break;
 
 				Quaternion targetRotation = Quaternion.LookRotation(direction) * Quaternion.Euler(0f, 90f, 0f);
-				transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, _tower.TurnSpeed * Time.deltaTime);
+
+				if (transform != null)
+					transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, _tower.TurnSpeed * Time.deltaTime);
 
 				if (Quaternion.Angle(transform.rotation, targetRotation) < 1f)
 					break;
