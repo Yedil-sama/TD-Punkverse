@@ -7,10 +7,17 @@ namespace TD_Punkverse.UI
 	{
 		private Canvas _canvas;
 
-		protected virtual void Awake()
+		private void Awake()
 		{
 			_canvas = GetComponent<Canvas>();
 		}
+
+		private void Start()
+		{
+			Initialize();
+		}
+
+		protected virtual void Initialize() { }
 
 		public virtual void Open()
 		{

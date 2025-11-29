@@ -1,4 +1,4 @@
-﻿using TD_Punkverse.Core;
+﻿using UnityEditor;
 using UnityEngine;
 
 namespace TD_Punkverse.Game.Grid
@@ -11,19 +11,15 @@ namespace TD_Punkverse.Game.Grid
 		[SerializeField] private GridCellView _cellPrefab;
 		[SerializeField] private Transform _container;
 
-		private void Start() => Generate();
-
 		public void Generate()
 		{
-			Clear();
-
-			GridCellView[,] cells = new GridCellView[_columns, _rows];
+			ClearEditor();
 
 			for (int x = 0; x < _columns; x++)
 			{
 				for (int y = 0; y < _rows; y++)
 				{
-					GridCellView cell = Instantiate(_cellPrefab, _container);
+					GridCellView cell = (GridCellView)PrefabUtility.InstantiatePrefab(_cellPrefab, _container);
 					cell.Initialize(x, y);
 
 					cell.transform.localPosition = new Vector3(
@@ -31,20 +27,15 @@ namespace TD_Punkverse.Game.Grid
 						0f,
 						y * _cellSize
 					);
-
-					cells[x, y] = cell;
 				}
 			}
-
-			ServiceLocator.Instance.Get<GridService>().SetCells(cells);
 		}
 
-		private void Clear()
+		public void ClearEditor()
 		{
-			GridCellView[] cells = _container.GetComponentsInChildren<GridCellView>(true);
-			foreach (GridCellView cell in cells)
+			for (int i = _container.childCount - 1; i >= 0; i--)
 			{
-				DestroyImmediate(cell.gameObject);
+				DestroyImmediate(_container.GetChild(i).gameObject);
 			}
 		}
 	}

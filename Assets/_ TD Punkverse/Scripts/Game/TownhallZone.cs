@@ -1,5 +1,4 @@
-﻿using TD_Punkverse.Game.Enemies;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace TD_Punkverse.Game
 {
@@ -11,14 +10,6 @@ namespace TD_Punkverse.Game
 		private void Awake()
 		{
 			_collider = GetComponent<Collider>();
-		}
-
-		private void OnTriggerEnter(Collider other)
-		{
-			if (other.TryGetComponent(out EnemyView enemyView))
-			{
-				enemyView.Enemy.DealDamageToPlayer();
-			}
 		}
 	}
 }

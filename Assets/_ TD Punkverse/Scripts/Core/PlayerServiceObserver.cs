@@ -4,14 +4,14 @@ namespace TD_Punkverse.Core
 {
 	public sealed class PlayerServiceObserver
 	{
-		public event Action<int> OnHealthChanged;
-		public event Action<int> OnMoneyChanged;
+		public event Action<int> OnHealthChange;
+		public event Action<int> OnMoneyChange;
 		public event Action OnLose;
 
-		public void InvokeHealthChanged(int value) => OnHealthChanged?.Invoke(value);
+		public void NotifyHealthChange(int value) => OnHealthChange?.Invoke(value);
 
-		public void InvokeMoneyChanged(int value) => OnMoneyChanged?.Invoke(value);
+		public void NotifyMoneyChange(int value) => OnMoneyChange?.Invoke(value);
 
-		public void InvokeLose() => OnLose?.Invoke();
+		public void NotifyLose() => OnLose?.Invoke();
 	}
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TD_Punkverse.Game;
+using UnityEngine;
 
 namespace TD_Punkverse.Core
 {
@@ -6,12 +7,14 @@ namespace TD_Punkverse.Core
 	{
 		[SerializeField] private int _health;
 		[SerializeField] private int _money;
+		[SerializeField] private TownhallZone _townhallZone;
 
 		private PlayerServiceObserver _observer;
 
 		public int Health => _health;
 		public int Money => _money;
 		public PlayerServiceObserver Observer => _observer;
+		public TownhallZone TownhallZone => _townhallZone;
 
 		public override void Initialize()
 		{
@@ -23,7 +26,7 @@ namespace TD_Punkverse.Core
 			if (amount <= 0) return;
 
 			_money += amount;
-			_observer.InvokeMoneyChanged(_money);
+			_observer.NotifyMoneyChange(_money);
 		}
 
 		public bool TrySpend(int amount)
@@ -32,7 +35,7 @@ namespace TD_Punkverse.Core
 			if (_money < amount) return false;
 
 			_money -= amount;
-			_observer.InvokeMoneyChanged(_money);
+			_observer.NotifyMoneyChange(_money);
 
 			return true;
 		}
@@ -42,12 +45,12 @@ namespace TD_Punkverse.Core
 			if (damage <= 0) return;
 
 			_health -= damage;
-			_observer.InvokeHealthChanged(_health);
+			_observer.NotifyHealthChange(_health);
 
 			if (_health <= 0)
 			{
 				_health = 0;
-				_observer.InvokeHealthChanged(_health);
+				_observer.NotifyHealthChange(_health);
 
 				Lose();
 			}
@@ -55,7 +58,7 @@ namespace TD_Punkverse.Core
 
 		public void Lose()
 		{
-			_observer.InvokeLose();
+			_observer.NotifyLose();
 		}
 	}
 }
