@@ -49,7 +49,6 @@ namespace TD_Punkverse.Core
 		private void OnLose()
 		{
 			Switch(new LoseGameState(this));
-			GameEventBus.RaiseLose();
 		}
 
 		private void OnWin()
