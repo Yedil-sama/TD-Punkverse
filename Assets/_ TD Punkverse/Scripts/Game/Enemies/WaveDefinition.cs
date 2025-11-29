@@ -16,5 +16,6 @@ namespace TD_Punkverse.Game.Enemies
 	public sealed class WaveDefinition : ScriptableObject
 	{
 		public List<WaveEnemyEntry> Enemies;
+		public int RewardAmount = 100;
 	}
 }

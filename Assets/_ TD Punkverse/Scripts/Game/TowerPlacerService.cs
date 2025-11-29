@@ -17,19 +17,22 @@ namespace TD_Punkverse.Game
 		private TowerView _ghostInstance;
 		private GridService _grid;
 		private Camera _worldCamera;
+		private PlayerService _player;
 		private readonly List<Renderer> _ghostRenderers = new List<Renderer>();
 
 		public override void Initialize()
 		{
 			_worldCamera = Camera.main;
-
 			_grid = ServiceLocator.Instance.Get<GridService>();
+			_player = ServiceLocator.Instance.Get<PlayerService>();
 		}
 
 		public void StartDrag(TowerView prefab)
 		{
+			if (!CanAfford(prefab)) return;
+
 			_draggedInstance = prefab;
-			_ghostInstance = Instantiate(prefab, _dragRoot);
+			_ghostInstance = Object.Instantiate(prefab, _dragRoot);
 			SetGhostPreview(_ghostInstance, true);
 			PrepareGhost(_ghostInstance);
 			UpdateDrag();
@@ -37,8 +40,7 @@ namespace TD_Punkverse.Game
 
 		public void UpdateDrag()
 		{
-			if (_ghostInstance == null)
-				return;
+			if (_ghostInstance == null) return;
 
 			Ray ray = _worldCamera.ScreenPointToRay(Input.mousePosition);
 			if (Physics.Raycast(ray, out RaycastHit hitInfo, Mathf.Infinity, _gridLayerMask))
@@ -47,7 +49,7 @@ namespace TD_Punkverse.Game
 				if (cell != null)
 				{
 					_ghostInstance.transform.position = cell.transform.position + new Vector3(0, 2.35f, 0);
-					SetGhostMaterial(cell.IsEmpty);
+					SetGhostMaterial(cell.IsEmpty && CanAfford(_draggedInstance));
 					return;
 				}
 
@@ -61,18 +63,21 @@ namespace TD_Punkverse.Game
 
 		public void EndDrag()
 		{
-			if (_ghostInstance == null)
-				return;
+			if (_ghostInstance == null) return;
 
 			Ray ray = _worldCamera.ScreenPointToRay(Input.mousePosition);
 			if (Physics.Raycast(ray, out RaycastHit hitInfo, Mathf.Infinity, _gridLayerMask))
 			{
 				GridCellView cell = hitInfo.collider.GetComponent<GridCellView>();
-				if (cell != null && cell.IsEmpty)
+				if (cell != null && cell.IsEmpty && CanAfford(_draggedInstance))
 				{
-					TowerView placed = Instantiate(_draggedInstance);
-					_grid.PlaceTower(placed, cell.GridX, cell.GridY);
+					TowerView placed = Object.Instantiate(_draggedInstance);
 
+					// Spend money
+					if (_draggedInstance.Tower != null)
+						_player.TrySpend(_draggedInstance.Tower.Cost);
+
+					_grid.PlaceTower(placed, cell.GridX, cell.GridY);
 					placed.FinalizePlacement();
 					SetGhostPreview(placed, false);
 
@@ -88,14 +93,17 @@ namespace TD_Punkverse.Game
 			_draggedInstance = null;
 		}
 
+		private bool CanAfford(TowerView towerView)
+		{
+			return towerView != null && towerView.Tower != null && _player.Money >= towerView.Tower.Cost;
+		}
+
 		private void PrepareGhost(TowerView ghost)
 		{
 			_ghostRenderers.Clear();
 			foreach (Renderer r in ghost.GetComponentsInChildren<Renderer>(true))
 			{
-				if (r.gameObject.layer == LayerMask.NameToLayer("Attack Range"))
-					continue;
-
+				if (r.gameObject.layer == LayerMask.NameToLayer("Attack Range")) continue;
 				_ghostRenderers.Add(r);
 			}
 
@@ -114,14 +122,14 @@ namespace TD_Punkverse.Game
 
 		private void SetGhostPreview(TowerView ghost, bool active)
 		{
-			if (ghost is ShootingTowerView shootingTower)
+			switch (ghost)
 			{
-				shootingTower.SetPlacementPreview(active);
-			}
-
-			if (ghost is YurtTowerView yurtTower)
-			{
-				yurtTower.SetPlacementPreview(active);
+				case ShootingTowerView shootingTower:
+					shootingTower.SetPlacementPreview(active);
+					break;
+				case YurtTowerView yurtTower:
+					yurtTower.SetPlacementPreview(active);
+					break;
 			}
 		}
 	}
