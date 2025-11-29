@@ -11,20 +11,32 @@ namespace TD_Punkverse.Game.Projectiles
 		private EnemyView _enemyView;
 
 		private bool _hit;
+		private Vector3 _lastTargetPosition;
 
 		public void Initialize(TargetProjectile projectile, EnemyView enemyView)
 		{
 			_projectile = projectile;
 			_enemyView = enemyView;
+
+			if (_enemyView != null)
+				_lastTargetPosition = _enemyView.Position;
+
 			StartCoroutine(MoveRoutine());
 		}
 
 		private IEnumerator MoveRoutine()
 		{
-			while (_enemyView != null && _enemyView.Enemy.CurrentHealth > 0 && !_hit)
+			while (!_hit)
 			{
-				Vector3 targetPos = _enemyView.Position;
-				transform.position = Vector3.MoveTowards(transform.position, targetPos, _projectile.Speed * Time.deltaTime);
+				if (_enemyView != null && _enemyView.Enemy != null && _enemyView.Enemy.CurrentHealth > 0)
+				{
+					_lastTargetPosition = _enemyView.Position;
+				}
+
+				transform.position = Vector3.MoveTowards(transform.position, _lastTargetPosition, _projectile.Speed * Time.deltaTime);
+
+				if (Vector3.Distance(transform.position, _lastTargetPosition) < 0.01f)
+					break;
 
 				yield return null;
 			}
