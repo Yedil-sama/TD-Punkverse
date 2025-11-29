@@ -19,19 +19,14 @@ namespace TD_Punkverse.Game.Towers
 		private void Awake()
 		{
 			_rangeTrigger.radius = _tower.AttackRange;
-			UpdateRangeIndicatorScale();
 		}
 
 		public void SetPlacementPreview(bool active)
 		{
 			if (_rangeIndicator != null)
 				_rangeIndicator.SetActive(active);
-		}
 
-		public new void FinalizePlacement()
-		{
-			base.FinalizePlacement();
-			SetPlacementPreview(false);
+			UpdateRangeIndicatorScale();
 		}
 
 		private void UpdateRangeIndicatorScale()
@@ -39,8 +34,15 @@ namespace TD_Punkverse.Game.Towers
 			if (_rangeIndicator != null)
 			{
 				float diameter = _tower.AttackRange * 2f;
-				_rangeIndicator.transform.localScale = new Vector3(diameter, diameter, diameter);
+				Vector3 scale = _rangeIndicator.transform.localScale;
+				_rangeIndicator.transform.localScale = new Vector3(diameter, diameter, scale.z);
 			}
+		}
+
+		public new void FinalizePlacement()
+		{
+			base.FinalizePlacement();
+			SetPlacementPreview(false);
 		}
 
 		private void OnTriggerEnter(Collider other)

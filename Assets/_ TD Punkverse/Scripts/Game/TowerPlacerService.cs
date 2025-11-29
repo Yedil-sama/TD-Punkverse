@@ -90,9 +90,14 @@ namespace TD_Punkverse.Game
 
 		private void PrepareGhost(TowerView ghost)
 		{
-			Renderer[] renderers = ghost.GetComponentsInChildren<Renderer>(true);
 			_ghostRenderers.Clear();
-			_ghostRenderers.AddRange(renderers);
+			foreach (Renderer r in ghost.GetComponentsInChildren<Renderer>(true))
+			{
+				if (r.gameObject.layer == LayerMask.NameToLayer("Attack Range"))
+					continue;
+
+				_ghostRenderers.Add(r);
+			}
 
 			ghost.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
 			SetGhostMaterial(false);
