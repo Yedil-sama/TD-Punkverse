@@ -994,12 +994,12 @@ MonoBehaviour:
   _tower:
     Name: Chem Tower
     Cost: 300
-    WorkSpeed: 0
-    _projectilePrefab: {fileID: 0}
-    _projectileSpeed: 0
-    _damage: 0
-    _attackRange: 0
-    _turnSpeed: 0
+    WorkSpeed: 3
+    _projectilePrefab: {fileID: 5293488502260491107, guid: 75767dcde9241704ebab73f7855aeb9b, type: 3}
+    _projectileSpeed: 10
+    _damage: 5
+    _attackRange: 30
+    _turnSpeed: 45
   _firePoint: {fileID: 13889333531816167}
   _rangeTrigger: {fileID: 4227695542450552819}
   _rangeIndicator: {fileID: 5593891358830846969}
@@ -1018,7 +1018,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
