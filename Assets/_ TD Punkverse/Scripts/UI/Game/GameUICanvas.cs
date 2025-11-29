@@ -15,6 +15,7 @@ namespace TD_Punkverse.UI.Game
 		{
 			playerService = ServiceLocator.Instance.Get<PlayerService>();
 
+			UpdateMoney(playerService.Money);
 			Subscribe();
 		}
 

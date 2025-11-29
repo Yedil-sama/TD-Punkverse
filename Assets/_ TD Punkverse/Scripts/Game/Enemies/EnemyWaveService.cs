@@ -46,8 +46,12 @@ namespace TD_Punkverse.Game.Enemies
 
 				yield return new WaitUntil(() => _factoryService.GetActiveEnemies().Count == 0);
 
-				_timer = _waveInterval;
+				if (wave.RewardAmount > 0)
+				{
+					_playerService.AddMoney(wave.RewardAmount);
+				}
 
+				_timer = _waveInterval;
 				while (_timer > 0f)
 				{
 					_timer -= Time.deltaTime;

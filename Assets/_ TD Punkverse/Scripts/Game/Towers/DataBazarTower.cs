@@ -1,9 +1,14 @@
-﻿namespace TD_Punkverse.Game.Towers
+﻿using System;
+using UnityEngine;
+
+namespace TD_Punkverse.Game.Towers
 {
-	public class DataBazarTower : Tower
+	[Serializable]
+	public sealed class DataBazarTower : Tower
 	{
-		public DataBazarTower(string name, int cost, float workSpeed) : base(name, cost, workSpeed)
-		{
-		}
+		[SerializeField] private int _incomePerTick = 5;
+		public int IncomePerTick => _incomePerTick;
+
+		public DataBazarTower(string name, int cost, float workSpeed) : base(name, cost, workSpeed) { }
 	}
 }

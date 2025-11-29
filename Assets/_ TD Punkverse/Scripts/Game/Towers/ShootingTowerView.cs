@@ -55,13 +55,11 @@ namespace TD_Punkverse.Game.Towers
 		public void ApplyWorkSpeedBuff(float buffAmount)
 		{
 			_currentWorkSpeed = Mathf.Max(0.1f, _currentWorkSpeed - buffAmount);
-			_tower.WorkSpeed = _currentWorkSpeed;
 		}
 
 		public void RemoveWorkSpeedBuff(float buffAmount)
 		{
 			_currentWorkSpeed = Mathf.Max(0.1f, _currentWorkSpeed + buffAmount);
-			_tower.WorkSpeed = _currentWorkSpeed;
 		}
 
 		private void OnTriggerEnter(Collider other)
