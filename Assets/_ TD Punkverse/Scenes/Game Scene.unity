@@ -17102,7 +17102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 3
-  _money: 0
+  _money: 200
   _townhallZone: {fileID: 892704210}
 --- !u!1001 &1841276497
 PrefabInstance:

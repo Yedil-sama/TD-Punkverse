@@ -1,4 +1,5 @@
-﻿using TD_Punkverse.Core;
+﻿using System.Collections.Generic;
+using TD_Punkverse.Core;
 using UnityEngine;
 
 namespace TD_Punkverse.Game.Towers
@@ -10,6 +11,7 @@ namespace TD_Punkverse.Game.Towers
 		[SerializeField] private SphereCollider _rangeTrigger;
 
 		private PlayerService _player;
+		private readonly HashSet<ShootingTowerView> _buffedTowers = new HashSet<ShootingTowerView>();
 
 		private void Awake()
 		{
@@ -46,9 +48,10 @@ namespace TD_Punkverse.Game.Towers
 				return;
 
 			ShootingTowerView shootingTower = other.GetComponent<ShootingTowerView>();
-			if (shootingTower == null)
+			if (shootingTower == null || _buffedTowers.Contains(shootingTower))
 				return;
 
+			_buffedTowers.Add(shootingTower);
 			shootingTower.ApplyWorkSpeedBuff(_tower.WorkSpeedBuff);
 		}
 
@@ -58,9 +61,10 @@ namespace TD_Punkverse.Game.Towers
 				return;
 
 			ShootingTowerView shootingTower = other.GetComponent<ShootingTowerView>();
-			if (shootingTower == null)
+			if (shootingTower == null || !_buffedTowers.Contains(shootingTower))
 				return;
 
+			_buffedTowers.Remove(shootingTower);
 			shootingTower.RemoveWorkSpeedBuff(_tower.WorkSpeedBuff);
 		}
 
