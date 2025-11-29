@@ -25,6 +25,25 @@ namespace TD_Punkverse.Game.Enemies
 			Die();
 		}
 
+		public virtual int TakeDamage(int damage)
+		{
+			if (damage <= 0) return 0;
+
+			int before = _health;
+
+			_health -= damage;
+			if (_health < 0) _health = 0;
+
+			int dealtDamage = before - _health;
+
+			if (_health == 0)
+			{
+				Die();
+			}
+
+			return dealtDamage;
+		}
+
 		private void Die()
 		{
 			OnDie?.Invoke(this);

@@ -4,10 +4,17 @@ namespace TD_Punkverse.UI.Game
 {
 	public sealed class LoseUICanvas : UICanvas
 	{
-		private void Start()
+		protected override void Initialize()
 		{
-			PlayerService player = ServiceLocator.Instance.Get<PlayerService>();
-			player.Observer.OnLose += Open;
+			Subscribe();
 		}
+
+		private void OnDestroy()
+		{
+			Unsubscribe();
+		}
+
+		private void Subscribe() => GameEventBus.OnLose += Open;
+		private void Unsubscribe() => GameEventBus.OnLose -= Open;
 	}
 }

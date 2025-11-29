@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 6691398640272940503}
   - component: {fileID: 7121067638044802790}
   m_Layer: 0
-  m_Name: CoinText
+  m_Name: MoneyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -571,7 +571,7 @@ GameObject:
   - component: {fileID: 6230090654580888127}
   - component: {fileID: 453137287940148024}
   m_Layer: 0
-  m_Name: Cion
+  m_Name: Money
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -711,7 +711,7 @@ GameObject:
   - component: {fileID: 5674840460076359995}
   - component: {fileID: 7556530863166293871}
   m_Layer: 0
-  m_Name: TimerText
+  m_Name: WaveTimerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1825,6 +1825,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a03620f99dc4aa48b78cc87044529fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _openOnStart: 1
+  _waveTimerText: {fileID: 7556530863166293871}
+  _moneyText: {fileID: 6691398640272940503}
 --- !u!1001 &3959885603715098696
 PrefabInstance:
   m_ObjectHideFlags: 0

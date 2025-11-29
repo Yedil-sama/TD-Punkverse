@@ -23,7 +23,7 @@ namespace TD_Punkverse.Game.Grid
 			_y = y;
 		}
 
-		private void Awake()
+		private void Start()
 		{
 			_grid = ServiceLocator.Instance.Get<GridService>();
 		}

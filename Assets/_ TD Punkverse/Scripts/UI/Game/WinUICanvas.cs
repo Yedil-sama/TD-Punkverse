@@ -1,14 +1,20 @@
 ﻿using TD_Punkverse.Core;
-using TD_Punkverse.Game.Enemies;
 
 namespace TD_Punkverse.UI.Game
 {
 	public sealed class WinUICanvas : UICanvas
 	{
-		private void Start()
+		protected override void Initialize()
 		{
-			EnemyWaveService waveService = ServiceLocator.Instance.Get<EnemyWaveService>();
-			waveService.OnWin += Open;
+			Subscribe();
 		}
+
+		private void OnDestroy()
+		{
+			Unsubscribe();
+		}
+
+		private void Subscribe() => GameEventBus.OnWin += Open;
+		private void Unsubscribe() => GameEventBus.OnWin -= Open;
 	}
 }

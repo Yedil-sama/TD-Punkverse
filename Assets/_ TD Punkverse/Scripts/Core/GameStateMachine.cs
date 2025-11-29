@@ -1,4 +1,5 @@
 ﻿using TD_Punkverse.Core.GameStates;
+using TD_Punkverse.Game.Enemies;
 
 namespace TD_Punkverse.Core
 {
@@ -6,12 +7,17 @@ namespace TD_Punkverse.Core
 	{
 		private GameState _current;
 
+		private PlayerService _playerService;
+		private EnemyWaveService _enemyWaveService;
+
 		public GameState Current => _current;
 
 		public override void Initialize()
 		{
-			Subscribe();
+			_playerService = ServiceLocator.Instance.Get<PlayerService>();
+			_enemyWaveService = ServiceLocator.Instance.Get<EnemyWaveService>();
 
+			Subscribe();
 			Switch(new PlayingGameState(this));
 		}
 
@@ -19,13 +25,14 @@ namespace TD_Punkverse.Core
 
 		private void Subscribe()
 		{
-			ServiceLocator.Instance.Get<PlayerService>().Observer.OnLose += OnLose;
+			_playerService.Observer.OnLose += OnLose;
+			_enemyWaveService.OnWin += OnWin;
 		}
 
 		private void Unsubscribe()
 		{
-			ServiceLocator.Instance.Get<PlayerService>().Observer.OnLose -= OnLose;
-
+			_playerService.Observer.OnLose -= OnLose;
+			_enemyWaveService.OnWin -= OnWin;
 		}
 
 		public void Switch(GameState next)
@@ -39,6 +46,16 @@ namespace TD_Punkverse.Core
 			_current.Enter();
 		}
 
-		private void OnLose() => Switch(new LoseGameState(this));
+		private void OnLose()
+		{
+			Switch(new LoseGameState(this));
+			GameEventBus.RaiseLose();
+		}
+
+		private void OnWin()
+		{
+			Switch(new WinGameState(this));
+			GameEventBus.RaiseWin();
+		}
 	}
 }

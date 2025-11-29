@@ -40,7 +40,9 @@ namespace TD_Punkverse.Game.Enemies
 		{
 			while (_currentWaveIndex < _waveSequence.Waves.Count)
 			{
-				SpawnWave(_waveSequence.Waves[_currentWaveIndex]);
+				WaveDefinition wave = _waveSequence.Waves[_currentWaveIndex];
+
+				yield return StartCoroutine(SpawnRoutine(wave));
 
 				yield return new WaitUntil(() => _factoryService.GetActiveEnemies().Count == 0);
 
@@ -58,8 +60,6 @@ namespace TD_Punkverse.Game.Enemies
 
 			OnWin?.Invoke();
 		}
-
-		private void SpawnWave(WaveDefinition wave) => StartCoroutine(SpawnRoutine(wave));
 
 		private IEnumerator SpawnRoutine(WaveDefinition wave)
 		{
