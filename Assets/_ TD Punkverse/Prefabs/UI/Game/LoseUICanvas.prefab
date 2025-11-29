@@ -132,6 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93a58a42b035453479d159a5d266e035, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _openOnStart: 0
 --- !u!1001 &2304691081455431147
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -140,6 +141,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3621121230223201776}
     m_Modifications:
+    - target: {fileID: 85303759824952220, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
+      propertyPath: m_Name
+      value: LoseBackground
+      objectReference: {fileID: 0}
     - target: {fileID: 2438961321939830490, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
       propertyPath: m_text
       value: 'YOU LOSE
@@ -230,9 +235,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3326985116090697852, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
+      propertyPath: m_Name
+      value: LoseText
+      objectReference: {fileID: 0}
     - target: {fileID: 4664738740413524376, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
       propertyPath: m_Name
       value: Buttons
+      objectReference: {fileID: 0}
+    - target: {fileID: 4859033469023486845, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
+      propertyPath: m_text
+      value: YOU LOSE
       objectReference: {fileID: 0}
     - target: {fileID: 8189554270043976731, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
       propertyPath: m_Name

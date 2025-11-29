@@ -879,7 +879,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 69ade465236531b4ab4043c198517b60, type: 2}
+  - {fileID: 2100000, guid: 5ad08ce23f1f5054da4dfab079f3979b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -920,6 +920,10 @@ PrefabInstance:
     - target: {fileID: 848987922732667115, guid: dae36ee70cd9e3c4e87b0996d83692de, type: 3}
       propertyPath: m_Name
       value: MenuUICanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6104515356630267290, guid: dae36ee70cd9e3c4e87b0996d83692de, type: 3}
+      propertyPath: _openOnStart
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8296985660168740506, guid: dae36ee70cd9e3c4e87b0996d83692de, type: 3}
       propertyPath: m_Pivot.x
@@ -1728,8 +1732,24 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1012339359}
     m_Modifications:
+    - target: {fileID: 410629516402535017, guid: 3b5265b7d85cd814c8a5b881d1b1de37, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1256335346263399289, guid: 3b5265b7d85cd814c8a5b881d1b1de37, type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2207642366909395796, guid: 3b5265b7d85cd814c8a5b881d1b1de37, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2337601167980883439, guid: 3b5265b7d85cd814c8a5b881d1b1de37, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245757116910326446, guid: 3b5265b7d85cd814c8a5b881d1b1de37, type: 3}
+      propertyPath: _openOnStart
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3515392335629806638, guid: 3b5265b7d85cd814c8a5b881d1b1de37, type: 3}
@@ -1812,9 +1832,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4278724997402588370, guid: 3b5265b7d85cd814c8a5b881d1b1de37, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4616263880917321906, guid: 3b5265b7d85cd814c8a5b881d1b1de37, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5198782136631796319, guid: 3b5265b7d85cd814c8a5b881d1b1de37, type: 3}
       propertyPath: m_Name
       value: CreditsUICanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535626235198758511, guid: 3b5265b7d85cd814c8a5b881d1b1de37, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324101629730670418, guid: 3b5265b7d85cd814c8a5b881d1b1de37, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6557669716901564815, guid: 3b5265b7d85cd814c8a5b881d1b1de37, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6989771027433219878, guid: 3b5265b7d85cd814c8a5b881d1b1de37, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927110448516051749, guid: 3b5265b7d85cd814c8a5b881d1b1de37, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8436093827078171160, guid: 3b5265b7d85cd814c8a5b881d1b1de37, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795919165869489691, guid: 3b5265b7d85cd814c8a5b881d1b1de37, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
