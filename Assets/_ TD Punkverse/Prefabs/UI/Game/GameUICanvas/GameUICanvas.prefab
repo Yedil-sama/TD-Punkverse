@@ -1790,6 +1790,10 @@ PrefabInstance:
       propertyPath: _towerPrefab
       value: 
       objectReference: {fileID: 3678225270616336129, guid: 965b9c3979b6b954ba70a7bcbd467afe, type: 3}
+    - target: {fileID: 7209703816174497701, guid: ce9f8ee94638a7a4aaa2b60d724f0289, type: 3}
+      propertyPath: m_text
+      value: 250
+      objectReference: {fileID: 0}
     - target: {fileID: 9115228417602466868, guid: ce9f8ee94638a7a4aaa2b60d724f0289, type: 3}
       propertyPath: m_Name
       value: TowerShopView (2)
@@ -2167,6 +2171,10 @@ PrefabInstance:
       propertyPath: _towerPrefab
       value: 
       objectReference: {fileID: 7633073019727999890, guid: ec1ffa61704a1024abb10294830b2690, type: 3}
+    - target: {fileID: 7209703816174497701, guid: ce9f8ee94638a7a4aaa2b60d724f0289, type: 3}
+      propertyPath: m_text
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 9115228417602466868, guid: ce9f8ee94638a7a4aaa2b60d724f0289, type: 3}
       propertyPath: m_Name
       value: TowerShopView (1)
@@ -2513,6 +2521,10 @@ PrefabInstance:
       propertyPath: _towerPrefab
       value: 
       objectReference: {fileID: 3010999930160903650, guid: d88b0ba776458fd4190ef86715bb41e2, type: 3}
+    - target: {fileID: 7209703816174497701, guid: ce9f8ee94638a7a4aaa2b60d724f0289, type: 3}
+      propertyPath: m_text
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 9115228417602466868, guid: ce9f8ee94638a7a4aaa2b60d724f0289, type: 3}
       propertyPath: m_Name
       value: TowerShopView
@@ -2653,6 +2665,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4563764873904693572}
     m_Modifications:
+    - target: {fileID: 446165313280093136, guid: ce9f8ee94638a7a4aaa2b60d724f0289, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: eecd3fad83eb1b24c836fa5eb1bcd59c, type: 3}
     - target: {fileID: 2682600584777940321, guid: ce9f8ee94638a7a4aaa2b60d724f0289, type: 3}
       propertyPath: m_text
       value: Data Bazar
@@ -2965,6 +2981,10 @@ PrefabInstance:
       propertyPath: _towerPrefab
       value: 
       objectReference: {fileID: 2428793872403813028, guid: 88b5f87d9300ab94a8bb76a9cf3fc1ba, type: 3}
+    - target: {fileID: 7209703816174497701, guid: ce9f8ee94638a7a4aaa2b60d724f0289, type: 3}
+      propertyPath: m_text
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 9115228417602466868, guid: ce9f8ee94638a7a4aaa2b60d724f0289, type: 3}
       propertyPath: m_Name
       value: TowerShopView (4)
