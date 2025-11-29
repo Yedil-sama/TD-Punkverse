@@ -14,13 +14,17 @@ namespace TD_Punkverse.Game.Enemies
 		public EnemyView SpawnEnemy(Enemy enemyData, Transform target, Vector3 spawnPosition)
 		{
 			EnemyView instance = Instantiate(_enemyPrefab, spawnPosition, Quaternion.identity, _enemyContainer);
-			instance.Initialize(enemyData, target);
 
+			Enemy runtimeEnemy = new Enemy(enemyData.Health, enemyData.Damage, enemyData.Speed);
+
+			instance.Initialize(runtimeEnemy, target);
 			_activeEnemies.Add(instance);
-			enemyData.OnDie += e => _activeEnemies.Remove(instance);
+
+			runtimeEnemy.OnDie += e => _activeEnemies.Remove(instance);
 
 			return instance;
 		}
+
 
 		public IReadOnlyList<EnemyView> GetActiveEnemies() => _activeEnemies;
 	}

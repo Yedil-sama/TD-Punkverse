@@ -7,15 +7,22 @@ namespace TD_Punkverse.Game.Enemies
 	[Serializable]
 	public class Enemy
 	{
-		[SerializeField] private float _speed = 1f;
-		[SerializeField] private int _damageToPlayer = 1;
 		[SerializeField] private int _health = 5;
+		[SerializeField] private int _damageToPlayer = 1;
+		[SerializeField] private float _speed = 1f;
 
 		public float Speed => _speed;
 		public int Damage => _damageToPlayer;
 		public int Health => _health;
 
 		public event Action<Enemy> OnDie;
+
+		public Enemy(int health, int damageToPlayer, float speed)
+		{
+			_health = health;
+			_damageToPlayer = damageToPlayer;
+			_speed = speed;
+		}
 
 		public virtual void DealDamageToPlayer()
 		{

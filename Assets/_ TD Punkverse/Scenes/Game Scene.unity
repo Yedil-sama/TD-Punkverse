@@ -19759,6 +19759,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3306939867946756651, guid: c92df3c4c5e8b76439a70f85d2d4d0d1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3894149623036785511, guid: c92df3c4c5e8b76439a70f85d2d4d0d1, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -19839,9 +19843,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3960170533835846422, guid: c92df3c4c5e8b76439a70f85d2d4d0d1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5103659387483203953, guid: c92df3c4c5e8b76439a70f85d2d4d0d1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5685277793762016534, guid: c92df3c4c5e8b76439a70f85d2d4d0d1, type: 3}
       propertyPath: m_Name
       value: SettingsUICanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755981613274509388, guid: c92df3c4c5e8b76439a70f85d2d4d0d1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7137487380704671490, guid: c92df3c4c5e8b76439a70f85d2d4d0d1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654991197388287551, guid: c92df3c4c5e8b76439a70f85d2d4d0d1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
