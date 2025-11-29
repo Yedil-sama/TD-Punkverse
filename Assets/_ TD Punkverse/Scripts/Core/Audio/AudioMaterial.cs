@@ -7,5 +7,6 @@ namespace TD_Punkverse.Core.Audio
 	public class AudioMaterial
 	{
 		[Range(0, 1f)] public float Volume;
+		public AudioClip AudioClip;
 	}
 }

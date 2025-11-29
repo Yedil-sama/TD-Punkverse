@@ -15,7 +15,6 @@ namespace TD_Punkverse.Core
 		public override void Initialize()
 		{
 			RegisterUICanvases();
-			CloseAll();
 		}
 
 		private void RegisterUICanvases()
