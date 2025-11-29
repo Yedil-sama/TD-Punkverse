@@ -9708,7 +9708,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f36c9d46d33070a4d97e39ebf28b97fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _worldCamera: {fileID: 330585545}
   _gridLayerMask:
     serializedVersion: 2
     m_Bits: 64
