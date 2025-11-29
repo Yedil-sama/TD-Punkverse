@@ -11,10 +11,17 @@ namespace TD_Punkverse.Game.Grid
 
 		private bool _isEmpty = true;
 		private GridService _grid;
+		private TowerView _tower;
 
 		public int GridX => _x;
 		public int GridY => _y;
 		public bool IsEmpty => _isEmpty;
+
+		public void Initialize(int x, int y)
+		{
+			_x = x;
+			_y = y;
+		}
 
 		private void Awake()
 		{
@@ -23,6 +30,8 @@ namespace TD_Punkverse.Game.Grid
 
 		public void Assign(TowerView tower)
 		{
+			_tower = tower;
+
 			tower.transform.parent = transform;
 			tower.transform.localPosition = new Vector3(0, 0.585f, 0);
 

@@ -32,11 +32,9 @@ namespace TD_Punkverse.Game.Grid
 				}
 			}
 		}
+		public void SetCells(GridCellView[,] cells) => _cells = cells;
 
-		public bool IsFree(int x, int y)
-		{
-			return _cells[x, y].IsEmpty;
-		}
+		public bool IsFree(int x, int y) => _cells[x, y].IsEmpty;
 
 		public void PlaceTower(TowerView tower, int x, int y)
 		{

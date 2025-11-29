@@ -593,7 +593,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4875499550372970958}
-  - component: {fileID: -8424392956901787754}
+  - component: {fileID: 3010999930160903650}
   m_Layer: 0
   m_Name: GunTower
   m_TagString: Untagged
@@ -619,7 +619,7 @@ Transform:
   - {fileID: 7068730220418504282}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-8424392956901787754
+--- !u!114 &3010999930160903650
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -628,9 +628,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 5074086726599120166}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f11c8866861e811459b7c89eadf14b2a, type: 3}
+  m_Script: {fileID: 11500000, guid: 0845466089d09204ea12cf3a0384bd41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _tower:
+    Name: 
+    Cost: 0
+    WorkSpeed: 0
+  _shootingTower:
+    Name: Gun Tower
+    Cost: 100
+    WorkSpeed: 1.25
+    projectilePrefab: {fileID: 5293488502260491107, guid: 75767dcde9241704ebab73f7855aeb9b, type: 3}
 --- !u!1 &5288698473746057279
 GameObject:
   m_ObjectHideFlags: 0
