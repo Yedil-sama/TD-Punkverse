@@ -4,16 +4,15 @@ using UnityEngine.AI;
 namespace TD_Punkverse.Game.Enemies
 {
 	[RequireComponent(typeof(NavMeshAgent))]
-	public class EnemyView : MonoBehaviour
+	public sealed class EnemyView : MonoBehaviour
 	{
-		[Header("Data")]
 		[SerializeField] private Enemy _enemy;
 
 		private NavMeshAgent _agent;
-
 		private Transform _target;
 
 		public Enemy Enemy => _enemy;
+		public Vector3 Position => transform.position;
 
 		public void Initialize(Enemy enemy, Transform target)
 		{
@@ -22,43 +21,30 @@ namespace TD_Punkverse.Game.Enemies
 			_enemy = enemy;
 			_target = target;
 
-			_agent.speed = enemy.Speed;
+			_enemy.Initialize();
 
-			Subscribe();
-		}
-
-		private void Subscribe()
-		{
-			_enemy.OnDie += HandleDie;
-		}
-
-		private void Unsubscribe()
-		{
-			_enemy.OnDie -= HandleDie;
-		}
-
-		private void OnDisable() => Unsubscribe();
-
-		private void Update()
-		{
-			if (_enemy == null || _target == null) return;
+			_agent.speed = _enemy.Speed;
+			_agent.updateRotation = true;
+			_agent.updatePosition = true;
 
 			_agent.SetDestination(_target.position);
 		}
 
+		private void Update()
+		{
+			if (_target == null)
+				return;
+
+			if (_agent.destination != _target.position)
+				_agent.SetDestination(_target.position);
+		}
+
 		private void OnTriggerEnter(Collider other)
 		{
-			if (_enemy == null) return;
-
-			if (other.TryGetComponent(out TownhallZone townhallZone))
+			if (other.TryGetComponent(out TownhallZone zone))
 			{
 				_enemy.DealDamageToPlayer();
 			}
-		}
-
-		private void HandleDie(Enemy enemy)
-		{
-			Destroy(gameObject);
 		}
 	}
 }

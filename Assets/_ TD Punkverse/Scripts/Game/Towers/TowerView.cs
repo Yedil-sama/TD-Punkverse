@@ -6,5 +6,13 @@ namespace TD_Punkverse.Game.Towers
 	{
 		private Tower _tower;
 		public Tower Tower => _tower;
+
+		private bool _isPlaced;
+		public bool IsPlaced => _isPlaced;
+
+		public void FinalizePlacement()
+		{
+			_isPlaced = true;
+		}
 	}
 }

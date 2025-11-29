@@ -8,7 +8,6 @@ namespace TD_Punkverse.Game
 {
 	public sealed class TowerPlacerService : Service
 	{
-		[SerializeField] private Camera _worldCamera;
 		[SerializeField] private LayerMask _gridLayerMask;
 		[SerializeField] private Transform _dragRoot;
 		[SerializeField] private Material _invalidPlacementMaterial;
@@ -17,14 +16,12 @@ namespace TD_Punkverse.Game
 		private TowerView _draggedInstance;
 		private TowerView _ghostInstance;
 		private GridService _grid;
+		private Camera _worldCamera;
 		private readonly List<Renderer> _ghostRenderers = new List<Renderer>();
 
 		public override void Initialize()
 		{
-			if (_worldCamera == null)
-			{
-				_worldCamera = Camera.main;
-			}
+			_worldCamera = Camera.main;
 
 			_grid = ServiceLocator.Instance.Get<GridService>();
 		}
@@ -33,6 +30,7 @@ namespace TD_Punkverse.Game
 		{
 			_draggedInstance = prefab;
 			_ghostInstance = Instantiate(prefab, _dragRoot);
+			SetGhostPreview(_ghostInstance, true);
 			PrepareGhost(_ghostInstance);
 			UpdateDrag();
 		}
@@ -40,9 +38,7 @@ namespace TD_Punkverse.Game
 		public void UpdateDrag()
 		{
 			if (_ghostInstance == null)
-			{
 				return;
-			}
 
 			Ray ray = _worldCamera.ScreenPointToRay(Input.mousePosition);
 			if (Physics.Raycast(ray, out RaycastHit hitInfo, Mathf.Infinity, _gridLayerMask))
@@ -51,15 +47,7 @@ namespace TD_Punkverse.Game
 				if (cell != null)
 				{
 					_ghostInstance.transform.position = cell.transform.position + new Vector3(0, 2.35f, 0);
-					if (cell.IsEmpty)
-					{
-						SetGhostMaterial(true);
-					}
-					else
-					{
-						SetGhostMaterial(false);
-					}
-
+					SetGhostMaterial(cell.IsEmpty);
 					return;
 				}
 
@@ -74,9 +62,7 @@ namespace TD_Punkverse.Game
 		public void EndDrag()
 		{
 			if (_ghostInstance == null)
-			{
 				return;
-			}
 
 			Ray ray = _worldCamera.ScreenPointToRay(Input.mousePosition);
 			if (Physics.Raycast(ray, out RaycastHit hitInfo, Mathf.Infinity, _gridLayerMask))
@@ -86,6 +72,10 @@ namespace TD_Punkverse.Game
 				{
 					TowerView placed = Instantiate(_draggedInstance);
 					_grid.PlaceTower(placed, cell.GridX, cell.GridY);
+
+					placed.FinalizePlacement();
+					SetGhostPreview(placed, false);
+
 					Destroy(_ghostInstance.gameObject);
 					_ghostInstance = null;
 					_draggedInstance = null;
@@ -102,10 +92,7 @@ namespace TD_Punkverse.Game
 		{
 			Renderer[] renderers = ghost.GetComponentsInChildren<Renderer>(true);
 			_ghostRenderers.Clear();
-			foreach (Renderer r in renderers)
-			{
-				_ghostRenderers.Add(r);
-			}
+			_ghostRenderers.AddRange(renderers);
 
 			ghost.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
 			SetGhostMaterial(false);
@@ -117,6 +104,14 @@ namespace TD_Punkverse.Game
 			foreach (Renderer renderer in _ghostRenderers)
 			{
 				renderer.sharedMaterial = material;
+			}
+		}
+
+		private void SetGhostPreview(TowerView ghost, bool active)
+		{
+			if (ghost is ShootingTowerView shootingTower)
+			{
+				shootingTower.SetPlacementPreview(active);
 			}
 		}
 	}

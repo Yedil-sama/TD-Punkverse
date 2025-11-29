@@ -5,50 +5,54 @@ using UnityEngine;
 namespace TD_Punkverse.Game.Enemies
 {
 	[Serializable]
-	public class Enemy
+	public sealed class Enemy
 	{
-		[SerializeField] private int _health = 5;
+		[SerializeField] private int _maxHealth = 5;
 		[SerializeField] private int _damageToPlayer = 1;
-		[SerializeField] private float _speed = 1f;
+		[SerializeField] private float _speed = 2f;
 
+		private int _currentHealth;
+
+		public int MaxHealth => _maxHealth;
+		public int CurrentHealth => _currentHealth;
 		public float Speed => _speed;
 		public int Damage => _damageToPlayer;
-		public int Health => _health;
 
 		public event Action<Enemy> OnDie;
 
-		public Enemy(int health, int damageToPlayer, float speed)
+		public Enemy(int maxHealth, int damageToPlayer, float speed)
 		{
-			_health = health;
+			_maxHealth = maxHealth;
 			_damageToPlayer = damageToPlayer;
 			_speed = speed;
+
+			_currentHealth = _maxHealth;
 		}
 
-		public virtual void DealDamageToPlayer()
+		public void Initialize()
+		{
+			_currentHealth = _maxHealth;
+		}
+
+		public void DealDamageToPlayer()
 		{
 			PlayerService playerService = ServiceLocator.Instance.Get<PlayerService>();
 			playerService.TakeDamage(_damageToPlayer);
-
 			Die();
 		}
 
-		public virtual int TakeDamage(int damage)
+		public int TakeDamage(int damage)
 		{
 			if (damage <= 0) return 0;
 
-			int before = _health;
+			int before = _currentHealth;
+			_currentHealth -= damage;
+			if (_currentHealth < 0) _currentHealth = 0;
 
-			_health -= damage;
-			if (_health < 0) _health = 0;
-
-			int dealtDamage = before - _health;
-
-			if (_health == 0)
-			{
+			if (_currentHealth == 0)
 				Die();
-			}
 
-			return dealtDamage;
+			return before - _currentHealth;
 		}
 
 		private void Die()
