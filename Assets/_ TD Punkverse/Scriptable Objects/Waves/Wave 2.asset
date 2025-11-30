@@ -17,7 +17,7 @@ MonoBehaviour:
       _maxHealth: 3
       _damageToPlayer: 1
       _speed: 2
-    Count: 2
+    Count: 20
     SpawnDelay: 1
   - EnemyData:
       _maxHealth: 5

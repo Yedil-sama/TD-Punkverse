@@ -17,6 +17,6 @@ MonoBehaviour:
       _maxHealth: 4
       _damageToPlayer: 1
       _speed: 2
-    Count: 4
+    Count: 15
     SpawnDelay: 3
   RewardAmount: 100
