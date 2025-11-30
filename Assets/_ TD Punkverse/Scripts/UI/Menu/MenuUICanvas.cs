@@ -7,7 +7,6 @@ namespace TD_Punkverse.UI.Menu
 		private UIService _uiService;
 		private SceneLoaderService _sceneLoaderService;
 
-
 		protected override void Initialize()
 		{
 			base.Initialize();
