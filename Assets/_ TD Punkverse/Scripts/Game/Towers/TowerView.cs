@@ -4,7 +4,8 @@ namespace TD_Punkverse.Game.Towers
 {
 	public class TowerView : MonoBehaviour
 	{
-		private Tower _tower;
+		[SerializeField] private Tower _tower; // assign this in the prefab
+
 		public Tower Tower => _tower;
 
 		private bool _isPlaced;
@@ -13,6 +14,11 @@ namespace TD_Punkverse.Game.Towers
 		public void FinalizePlacement()
 		{
 			_isPlaced = true;
+		}
+
+		public void SetTower(Tower towerData)
+		{
+			_tower = new Tower(towerData.Name, towerData.Cost, towerData.WorkSpeed);
 		}
 	}
 }

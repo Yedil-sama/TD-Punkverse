@@ -32,7 +32,10 @@ namespace TD_Punkverse.Game
 			if (!CanAfford(prefab)) return;
 
 			_draggedInstance = prefab;
+
 			_ghostInstance = Object.Instantiate(prefab, _dragRoot);
+			_ghostInstance.SetTower(prefab.Tower); // ensure the ghost has the tower data
+
 			SetGhostPreview(_ghostInstance, true);
 			PrepareGhost(_ghostInstance);
 			UpdateDrag();

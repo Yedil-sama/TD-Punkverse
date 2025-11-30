@@ -1,13 +1,10 @@
-﻿using TD_Punkverse.Core;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace TD_Punkverse.UI
 {
 	public abstract class SettingsUICanvas : UICanvas
 	{
-		private SceneLoaderService _sceneLoaderService;
-
 		[Header("Master Volume")]
 		[SerializeField] private Image _masterIcon;
 		[SerializeField] private Slider _masterSlider;
@@ -25,18 +22,5 @@ namespace TD_Punkverse.UI
 		[SerializeField] private Slider _sfxSlider;
 		[SerializeField] private Sprite _sfxOn;
 		[SerializeField] private Sprite _sfxOff;
-
-		protected override void Initialize()
-		{
-			base.Initialize();
-
-			_sceneLoaderService = ServiceLocator.Instance.Get<SceneLoaderService>();
-		}
-
-		public void OnRetryButtonPress()
-		{
-			_sceneLoaderService.LoadScene("Game Scene");
-		}
-
 	}
 }
