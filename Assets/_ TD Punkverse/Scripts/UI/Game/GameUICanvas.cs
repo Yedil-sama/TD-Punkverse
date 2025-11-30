@@ -13,6 +13,8 @@ namespace TD_Punkverse.UI.Game
 
 		protected override void Initialize()
 		{
+			base.Initialize();
+
 			playerService = ServiceLocator.Instance.Get<PlayerService>();
 
 			UpdateMoney(playerService.Money);

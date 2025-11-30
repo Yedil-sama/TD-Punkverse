@@ -6,6 +6,8 @@ namespace TD_Punkverse.UI.Game
 	{
 		protected override void Initialize()
 		{
+			base.Initialize();
+
 			Subscribe();
 		}
 

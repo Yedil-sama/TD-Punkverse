@@ -9,7 +9,7 @@ namespace TD_Punkverse.UI
 		[SerializeField] private bool _openOnStart = false;
 		private Canvas _canvas;
 
-		private void Awake()
+		protected virtual void Initialize()
 		{
 			_canvas = GetComponent<Canvas>();
 		}
@@ -27,8 +27,6 @@ namespace TD_Punkverse.UI
 				Close();
 			}
 		}
-
-		protected virtual void Initialize() { }
 
 		public virtual void Open()
 		{
