@@ -28,7 +28,7 @@ namespace TD_Punkverse.UI.Menu
 
 		public void OnSettingsButtonPress()
 		{
-			_uiService.Get<SettingsUICanvas>().Open();
+			_uiService.Get<MenuSettingsUICanvas>().Open();
 		}
 	}
 }

@@ -805,11 +805,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2612304730770139082, guid: 33205a70632104d49a5b2fb143a85825, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Close
+      value: OnExitButtonPress
       objectReference: {fileID: 0}
     - target: {fileID: 2612304730770139082, guid: 33205a70632104d49a5b2fb143a85825, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TD_Punkverse.UI.UICanvas, Assembly-CSharp
+      value: TD_Punkverse.UI.Menu.CreditsUICanvas, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2612304730770139082, guid: 33205a70632104d49a5b2fb143a85825, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

@@ -16,9 +16,65 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Close
       objectReference: {fileID: 0}
+    - target: {fileID: 1630063851772966600, guid: c92df3c4c5e8b76439a70f85d2d4d0d1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630063851772966600, guid: c92df3c4c5e8b76439a70f85d2d4d0d1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630063851772966600, guid: c92df3c4c5e8b76439a70f85d2d4d0d1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3755560125486224115}
+    - target: {fileID: 1630063851772966600, guid: c92df3c4c5e8b76439a70f85d2d4d0d1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630063851772966600, guid: c92df3c4c5e8b76439a70f85d2d4d0d1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnRetryButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630063851772966600, guid: c92df3c4c5e8b76439a70f85d2d4d0d1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TD_Punkverse.UI.Game.GameSettingsUICanvas, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630063851772966600, guid: c92df3c4c5e8b76439a70f85d2d4d0d1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1705884114298618928, guid: c92df3c4c5e8b76439a70f85d2d4d0d1, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3070732355621902331, guid: c92df3c4c5e8b76439a70f85d2d4d0d1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3070732355621902331, guid: c92df3c4c5e8b76439a70f85d2d4d0d1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3070732355621902331, guid: c92df3c4c5e8b76439a70f85d2d4d0d1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3755560125486224115}
+    - target: {fileID: 3070732355621902331, guid: c92df3c4c5e8b76439a70f85d2d4d0d1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3070732355621902331, guid: c92df3c4c5e8b76439a70f85d2d4d0d1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMenuButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 3070732355621902331, guid: c92df3c4c5e8b76439a70f85d2d4d0d1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TD_Punkverse.UI.Game.GameSettingsUICanvas, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3070732355621902331, guid: c92df3c4c5e8b76439a70f85d2d4d0d1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3306939867946756651, guid: c92df3c4c5e8b76439a70f85d2d4d0d1, type: 3}
       propertyPath: m_AnchorMax.y

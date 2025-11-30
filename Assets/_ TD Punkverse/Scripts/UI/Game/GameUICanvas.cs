@@ -49,7 +49,7 @@ namespace TD_Punkverse.UI.Game
 
 		public void OnSettingsButtonPress()
 		{
-			_uiService.Get<SettingsUICanvas>().Open();
+			_uiService.Get<GameSettingsUICanvas>().Open();
 		}
 	}
 }
