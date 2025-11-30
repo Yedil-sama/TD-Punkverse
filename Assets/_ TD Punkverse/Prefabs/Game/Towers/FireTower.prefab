@@ -996,13 +996,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tower:
-    Name: Fire Tower
+    Name: Rapid Tower
+    Cost: 400
+    WorkSpeed: 0.3
+  _shootTower:
+    Name: Rapid Tower
     Cost: 400
     WorkSpeed: 0.3
     _projectilePrefab: {fileID: 5293488502260491107, guid: 25b69c7e04b365e43a221413b785426a, type: 3}
-    _projectileSpeed: 40
+    _projectileSpeed: 30
     _damage: 1
-    _attackRange: 10
+    _attackRange: 8
     _turnSpeed: 360
   _firePoint: {fileID: 825399029058210024}
   _rangeTrigger: {fileID: 531102040105595678}

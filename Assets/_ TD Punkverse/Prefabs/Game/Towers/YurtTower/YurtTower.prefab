@@ -153,6 +153,10 @@ MonoBehaviour:
     Name: Yurt Tower
     Cost: 100
     WorkSpeed: 0
+  _yurtTower:
+    Name: Yurt Tower
+    Cost: 100
+    WorkSpeed: 0
     _workSpeedBuff: 0.2
     _range: 8
   _rangeIndicator: {fileID: 3733446439073911299}

@@ -855,11 +855,15 @@ MonoBehaviour:
     Name: Shaft Tower
     Cost: 250
     WorkSpeed: 6
+  _shootTower:
+    Name: Shaft Tower
+    Cost: 250
+    WorkSpeed: 6
     _projectilePrefab: {fileID: 5293488502260491107, guid: 43fb1816b0b989e46adcca4b04aed31e, type: 3}
-    _projectileSpeed: 70
+    _projectileSpeed: 50
     _damage: 5
     _attackRange: 100
-    _turnSpeed: 10
+    _turnSpeed: 15
   _firePoint: {fileID: 1040000592385043124}
   _rangeTrigger: {fileID: 566416516075853125}
   _rangeIndicator: {fileID: 9006002714679997739}

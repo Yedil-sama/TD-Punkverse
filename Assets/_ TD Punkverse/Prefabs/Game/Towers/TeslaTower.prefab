@@ -1289,11 +1289,15 @@ MonoBehaviour:
     Name: Tesla Tower
     Cost: 500
     WorkSpeed: 1
+  _shootTower:
+    Name: Tesla Tower
+    Cost: 500
+    WorkSpeed: 1
     _projectilePrefab: {fileID: 5293488502260491107, guid: 64758a38913e6a6498257aef6bb6eecf, type: 3}
     _projectileSpeed: 12.5
     _damage: 2
     _attackRange: 25
-    _turnSpeed: 180
+    _turnSpeed: 360
   _firePoint: {fileID: 3967166033683505367}
   _rangeTrigger: {fileID: 8508814649482288534}
   _rangeIndicator: {fileID: 4429176639317045812}

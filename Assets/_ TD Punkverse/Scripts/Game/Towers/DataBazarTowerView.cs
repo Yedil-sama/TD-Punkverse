@@ -6,7 +6,7 @@ namespace TD_Punkverse.Game.Towers
 {
 	public sealed class DataBazarTowerView : TowerView
 	{
-		[SerializeField] private DataBazarTower _tower;
+		[SerializeField] private DataBazarTower _dataBazarTower;
 
 		private PlayerService _playerService;
 		private Coroutine _incomeRoutine;
@@ -21,8 +21,8 @@ namespace TD_Punkverse.Game.Towers
 		{
 			while (true)
 			{
-				yield return new WaitForSeconds(_tower.WorkSpeed);
-				_playerService.AddMoney(_tower.IncomePerTick);
+				yield return new WaitForSeconds(_dataBazarTower.WorkSpeed);
+				_playerService.AddMoney(_dataBazarTower.IncomePerTick);
 			}
 		}
 

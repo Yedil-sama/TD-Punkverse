@@ -8,7 +8,7 @@ namespace TD_Punkverse.Game.Towers
 {
 	public class ShootingTowerView : TowerView
 	{
-		[SerializeField] private ShootingTower _tower;
+		[SerializeField] private ShootingTower _shootTower;
 		[SerializeField] private Transform _firePoint;
 		[SerializeField] private SphereCollider _rangeTrigger;
 		[SerializeField] private GameObject _rangeIndicator;
@@ -21,10 +21,10 @@ namespace TD_Punkverse.Game.Towers
 
 		private void Awake()
 		{
-			_baseWorkSpeed = _tower.WorkSpeed;
+			_baseWorkSpeed = _shootTower.WorkSpeed;
 			_currentWorkSpeed = _baseWorkSpeed;
 
-			_rangeTrigger.radius = _tower.AttackRange;
+			_rangeTrigger.radius = _shootTower.AttackRange;
 			UpdateRangeIndicatorScale();
 		}
 
@@ -41,7 +41,7 @@ namespace TD_Punkverse.Game.Towers
 			if (_rangeIndicator == null)
 				return;
 
-			float diameter = _tower.AttackRange * 2f;
+			float diameter = _shootTower.AttackRange * 2f;
 			Vector3 scale = _rangeIndicator.transform.localScale;
 			_rangeIndicator.transform.localScale = new Vector3(diameter, diameter, scale.z);
 		}
@@ -143,7 +143,7 @@ namespace TD_Punkverse.Game.Towers
 				transform.rotation = Quaternion.RotateTowards(
 					transform.rotation,
 					targetRotation,
-					_tower.TurnSpeed * Time.deltaTime
+					_shootTower.TurnSpeed * Time.deltaTime
 				);
 
 				if (Quaternion.Angle(transform.rotation, targetRotation) < 1f)
@@ -156,13 +156,13 @@ namespace TD_Punkverse.Game.Towers
 		private void FireProjectile(EnemyView enemyView)
 		{
 			TargetProjectile projectile = new TargetProjectile(
-				_tower.Damage,
-				_tower.ProjectileSpeed,
+				_shootTower.Damage,
+				_shootTower.ProjectileSpeed,
 				enemyView.Enemy
 			);
 
 			ProjectileView instance = Instantiate(
-				_tower.ProjectilePrefab,
+				_shootTower.ProjectilePrefab,
 				_firePoint.position,
 				Quaternion.identity
 			);

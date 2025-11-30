@@ -6,7 +6,7 @@ namespace TD_Punkverse.Game.Towers
 {
 	public sealed class YurtTowerView : TowerView
 	{
-		[SerializeField] private YurtTower _tower;
+		[SerializeField] private YurtTower _yurtTower;
 		[SerializeField] private GameObject _rangeIndicator;
 		[SerializeField] private SphereCollider _rangeTrigger;
 
@@ -15,7 +15,7 @@ namespace TD_Punkverse.Game.Towers
 
 		private void Awake()
 		{
-			_rangeTrigger.radius = _tower.Range;
+			_rangeTrigger.radius = _yurtTower.Range;
 			UpdateRangeIndicatorScale();
 		}
 
@@ -37,7 +37,7 @@ namespace TD_Punkverse.Game.Towers
 			if (_rangeIndicator == null)
 				return;
 
-			float diameter = _tower.Range * 2f;
+			float diameter = _yurtTower.Range * 2f;
 			Vector3 scale = _rangeIndicator.transform.localScale;
 			_rangeIndicator.transform.localScale = new Vector3(diameter, diameter, scale.z);
 		}
@@ -52,7 +52,7 @@ namespace TD_Punkverse.Game.Towers
 				return;
 
 			_buffedTowers.Add(shootingTower);
-			shootingTower.ApplyWorkSpeedBuff(_tower.WorkSpeedBuff);
+			shootingTower.ApplyWorkSpeedBuff(_yurtTower.WorkSpeedBuff);
 		}
 
 		private void OnTriggerExit(Collider other)
@@ -65,7 +65,7 @@ namespace TD_Punkverse.Game.Towers
 				return;
 
 			_buffedTowers.Remove(shootingTower);
-			shootingTower.RemoveWorkSpeedBuff(_tower.WorkSpeedBuff);
+			shootingTower.RemoveWorkSpeedBuff(_yurtTower.WorkSpeedBuff);
 		}
 
 		public new void FinalizePlacement()
