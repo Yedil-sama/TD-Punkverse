@@ -145,6 +145,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoseBackground
       objectReference: {fileID: 0}
+    - target: {fileID: 590432479149234769, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 590432479149234769, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 590432479149234769, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3682798996541623284}
+    - target: {fileID: 590432479149234769, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 590432479149234769, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnRetryButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 590432479149234769, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TD_Punkverse.UI.Game.LoseUICanvas, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 590432479149234769, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2438961321939830490, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
       propertyPath: m_text
       value: 'YOU LOSE
@@ -238,6 +266,34 @@ PrefabInstance:
     - target: {fileID: 3326985116090697852, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
       propertyPath: m_Name
       value: LoseText
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741038113382732503, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741038113382732503, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741038113382732503, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3682798996541623284}
+    - target: {fileID: 3741038113382732503, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741038113382732503, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMenuButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741038113382732503, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TD_Punkverse.UI.Game.LoseUICanvas, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741038113382732503, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4664738740413524376, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
       propertyPath: m_Name

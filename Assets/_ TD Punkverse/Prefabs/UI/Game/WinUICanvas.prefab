@@ -8,6 +8,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4614109194519387237}
     m_Modifications:
+    - target: {fileID: 590432479149234769, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 590432479149234769, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 590432479149234769, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5234778678835127011}
+    - target: {fileID: 590432479149234769, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 590432479149234769, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnRetryButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 590432479149234769, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TD_Punkverse.UI.Game.WinUICanvas, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 590432479149234769, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3183617392411651170, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -87,6 +115,34 @@ PrefabInstance:
     - target: {fileID: 3183617392411651170, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741038113382732503, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741038113382732503, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741038113382732503, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5234778678835127011}
+    - target: {fileID: 3741038113382732503, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741038113382732503, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMenuButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741038113382732503, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TD_Punkverse.UI.Game.WinUICanvas, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741038113382732503, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4664738740413524376, guid: b692cf7ee74ad164f9a80cb4db827fad, type: 3}
       propertyPath: m_Name
@@ -335,6 +391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdd7b28410681a54ab7a85c20da44a14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _openOnStart: 0
 --- !u!224 &4614109194519387237 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2497888554514212188, guid: a9654ba1f41e60b4cb2cfec070f06a8e, type: 3}

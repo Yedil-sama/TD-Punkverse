@@ -8,9 +8,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 942203067776128038, guid: c92df3c4c5e8b76439a70f85d2d4d0d1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8831283793424057177}
+    - target: {fileID: 942203067776128038, guid: c92df3c4c5e8b76439a70f85d2d4d0d1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Close
+      objectReference: {fileID: 0}
     - target: {fileID: 1705884114298618928, guid: c92df3c4c5e8b76439a70f85d2d4d0d1, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3306939867946756651, guid: c92df3c4c5e8b76439a70f85d2d4d0d1, type: 3}
       propertyPath: m_AnchorMax.y
@@ -114,7 +122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5685277793762016534, guid: c92df3c4c5e8b76439a70f85d2d4d0d1, type: 3}
       propertyPath: m_Name
-      value: MenuSettingsUICanvas Variant
+      value: MenuSettingsUICanvas
       objectReference: {fileID: 0}
     - target: {fileID: 6755981613274509388, guid: c92df3c4c5e8b76439a70f85d2d4d0d1, type: 3}
       propertyPath: m_AnchorMax.y
@@ -129,7 +137,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6850769431014266878, guid: c92df3c4c5e8b76439a70f85d2d4d0d1, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5685277793762016534, guid: c92df3c4c5e8b76439a70f85d2d4d0d1, type: 3}
