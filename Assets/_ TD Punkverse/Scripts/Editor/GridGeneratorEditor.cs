@@ -1,20 +1,26 @@
-﻿//[CustomEditor(typeof(GridGenerator))]
-//public sealed class GridGeneratorEditor : Editor
-//{
-//	public override void OnInspectorGUI()
-//	{
-//		DrawDefaultInspector();
+﻿#if UNITY_EDITOR
+using TD_Punkverse.Game.Grid;
+using UnityEditor;
+using UnityEngine;
 
-//		GridGenerator generator = (GridGenerator)target;
+[CustomEditor(typeof(GridGenerator))]
+public sealed class GridGeneratorEditor : Editor
+{
+	public override void OnInspectorGUI()
+	{
+		DrawDefaultInspector();
 
-//		if (GUILayout.Button("Generate Grid"))
-//		{
-//			generator.Generate();
-//		}
+		GridGenerator generator = (GridGenerator)target;
 
-//		if (GUILayout.Button("Clear Grid"))
-//		{
-//			generator.ClearEditor();
-//		}
-//	}
-//}
+		if (GUILayout.Button("Generate Grid"))
+		{
+			generator.Generate();
+		}
+
+		if (GUILayout.Button("Clear Grid"))
+		{
+			generator.ClearEditor();
+		}
+	}
+}
+#endif

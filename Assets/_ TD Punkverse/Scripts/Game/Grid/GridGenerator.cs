@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿#if UNITY_EDITOR
+using UnityEditor;
 using UnityEngine;
 
 namespace TD_Punkverse.Game.Grid
@@ -40,3 +41,4 @@ namespace TD_Punkverse.Game.Grid
 		}
 	}
 }
+#endif
