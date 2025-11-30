@@ -23,6 +23,7 @@ namespace TD_Punkverse.UI.Menu
 
 		public void OnCreditsButtonPress()
 		{
+			Close();
 			_uiService.Get<CreditsUICanvas>().Open();
 		}
 
