@@ -6,6 +6,8 @@ namespace TD_Punkverse.UI.Game
 {
 	public sealed class GameUICanvas : UICanvas
 	{
+
+		private UIService _uiService;
 		[SerializeField] private TMP_Text _waveTimerText;
 		[SerializeField] private TMP_Text _moneyText;
 
@@ -16,6 +18,7 @@ namespace TD_Punkverse.UI.Game
 			base.Initialize();
 
 			playerService = ServiceLocator.Instance.Get<PlayerService>();
+			_uiService = ServiceLocator.Instance.Get<UIService>();
 
 			UpdateMoney(playerService.Money);
 			Subscribe();
@@ -42,6 +45,11 @@ namespace TD_Punkverse.UI.Game
 		public void UpdateMoney(int money)
 		{
 			_moneyText.text = money.ToString();
+		}
+
+		public void OnSettingsButtonPress()
+		{
+			_uiService.Get<SettingsUICanvas>().Open();
 		}
 	}
 }
