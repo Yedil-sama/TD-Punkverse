@@ -993,15 +993,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tower:
     Name: Mortier
-    Cost: 300
+    Cost: 250
     WorkSpeed: 3
   _shootTower:
     Name: Mortier
-    Cost: 300
+    Cost: 250
     WorkSpeed: 3
     _projectilePrefab: {fileID: 5293488502260491107, guid: 75767dcde9241704ebab73f7855aeb9b, type: 3}
     _projectileSpeed: 15
-    _damage: 3
+    _damage: 4
     _attackRange: 30
     _turnSpeed: 45
   _firePoint: {fileID: 13889333531816167}

@@ -1,4 +1,6 @@
-﻿using TD_Punkverse.Core;
+﻿using DG.Tweening;
+using TD_Punkverse.Core;
+using UnityEngine;
 
 namespace TD_Punkverse.UI.Game
 {
@@ -22,14 +24,17 @@ namespace TD_Punkverse.UI.Game
 		private void Subscribe() => GameEventBus.OnLose += Open;
 		private void Unsubscribe() => GameEventBus.OnLose -= Open;
 
-        public void OnRetryButtonPress()
-        {
-            _sceneLoaderService.LoadScene("Game Scene");
-        }
+		public void OnRetryButtonPress()
+		{
+			Time.timeScale = 1f;
+			DOTween.KillAll();
 
-        public void OnMenuButtonPress()
-        {
-            _sceneLoaderService.LoadScene("Menu Scene");
-        }
-    }
+			ServiceLocator.Instance.Get<SceneLoaderService>().LoadScene("Game Scene");
+		}
+
+		public void OnMenuButtonPress()
+		{
+			_sceneLoaderService.LoadScene("Menu Scene");
+		}
+	}
 }

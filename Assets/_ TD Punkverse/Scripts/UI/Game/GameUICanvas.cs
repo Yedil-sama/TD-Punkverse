@@ -8,6 +8,7 @@ namespace TD_Punkverse.UI.Game
 	{
 
 		private UIService _uiService;
+		[SerializeField] private TMP_Text _waveNumberText;
 		[SerializeField] private TMP_Text _waveTimerText;
 		[SerializeField] private TMP_Text _moneyText;
 
@@ -24,7 +25,7 @@ namespace TD_Punkverse.UI.Game
 			Subscribe();
 		}
 
-		private void OnDestroy() => Unsubscribe();
+		//private void OnDestroy() => Unsubscribe();
 
 		private void Subscribe()
 		{
@@ -50,6 +51,11 @@ namespace TD_Punkverse.UI.Game
 		public void OnSettingsButtonPress()
 		{
 			_uiService.Get<GameSettingsUICanvas>().Open();
+		}
+
+		public void UpdateWaveNumber(int value)
+		{
+			_waveNumberText.text = $"Wave {value + 1}";
 		}
 	}
 }

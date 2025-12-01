@@ -639,5 +639,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _openOnStart: 0
-  _progressBar: {fileID: 0}
-  _progressLabel: {fileID: 0}
+  _progressBar: {fileID: 5126262358759448206}
+  _progressLabel: {fileID: 1353004968685657460}

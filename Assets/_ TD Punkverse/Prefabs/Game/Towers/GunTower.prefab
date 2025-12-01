@@ -668,14 +668,14 @@ MonoBehaviour:
   _tower:
     Name: Gun Tower
     Cost: 100
-    WorkSpeed: 1.25
+    WorkSpeed: 1.5
   _shootTower:
     Name: Gun Tower
     Cost: 100
-    WorkSpeed: 1.25
+    WorkSpeed: 1.5
     _projectilePrefab: {fileID: 5293488502260491107, guid: 75767dcde9241704ebab73f7855aeb9b, type: 3}
     _projectileSpeed: 25
-    _damage: 1
+    _damage: 2
     _attackRange: 15
     _turnSpeed: 120
   _firePoint: {fileID: 6764709705720396297}

@@ -15185,7 +15185,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3743229526652931450, guid: e748586bbc9f3894dbcdb0fd20db4d5c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -31.4
+      value: -29.43
       objectReference: {fileID: 0}
     - target: {fileID: 3743229526652931450, guid: e748586bbc9f3894dbcdb0fd20db4d5c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -17148,7 +17148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 3
-  _money: 200
+  _money: 250
   _townhallZone: {fileID: 892704210}
 --- !u!1001 &1841276497
 PrefabInstance:

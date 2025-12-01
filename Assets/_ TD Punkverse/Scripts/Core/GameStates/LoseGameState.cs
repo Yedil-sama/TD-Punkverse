@@ -16,14 +16,13 @@ namespace TD_Punkverse.Core
 			DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 0f, PauseDuration)
 				   .SetEase(Ease.Linear)
 				   .SetUpdate(true)
-				   .OnComplete(() =>
-				   {
-					   GameEventBus.RaiseLose();
-				   });
+				   .SetId(this)
+				   .OnComplete(() => GameEventBus.RaiseLose());
 		}
 
 		public override void Exit()
 		{
+			DOTween.Kill(this);
 			Time.timeScale = 1f;
 		}
 	}

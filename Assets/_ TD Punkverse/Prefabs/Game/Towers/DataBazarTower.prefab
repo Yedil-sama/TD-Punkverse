@@ -857,7 +857,7 @@ MonoBehaviour:
     Name: Data Bazar Tower
     Cost: 50
     WorkSpeed: 10
-    _incomePerTick: 15
+    _incomePerTick: 5
 --- !u!1 &5772647528188377389
 GameObject:
   m_ObjectHideFlags: 0

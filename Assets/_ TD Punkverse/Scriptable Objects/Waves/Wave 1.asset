@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemies:
   - EnemyData:
-      _maxHealth: 3
+      _maxHealth: 5
       _damageToPlayer: 1
       _speed: 2
-    Count: 15
+    Count: 5
     SpawnDelay: 1
-  RewardAmount: 100
+  RewardAmount: 300

@@ -1287,11 +1287,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tower:
     Name: Tesla Tower
-    Cost: 500
+    Cost: 1000
     WorkSpeed: 1
   _shootTower:
     Name: Tesla Tower
-    Cost: 500
+    Cost: 1000
     WorkSpeed: 1
     _projectilePrefab: {fileID: 5293488502260491107, guid: 64758a38913e6a6498257aef6bb6eecf, type: 3}
     _projectileSpeed: 12.5

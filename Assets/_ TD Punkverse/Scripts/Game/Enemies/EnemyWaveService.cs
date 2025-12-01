@@ -19,6 +19,7 @@ namespace TD_Punkverse.Game.Enemies
 
 		private EnemyFactoryService _factoryService;
 		private PlayerService _playerService;
+		private UIService _uiService;
 		private GameUICanvas _gameUICanvas;
 
 		private int _currentWaveIndex;
@@ -60,6 +61,7 @@ namespace TD_Punkverse.Game.Enemies
 				}
 
 				_currentWaveIndex++;
+				_gameUICanvas.UpdateWaveNumber(_currentWaveIndex);
 			}
 
 			OnWin?.Invoke();
